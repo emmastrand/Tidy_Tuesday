@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591991113831.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C3053B72",
+    "lastKnownWriteTime" : 1591994317,
+    "last_content_update" : 1591994317467,
+    "path" : "~/MyProjects/Tidy_Tuesday/20200612.Rmd",
+    "project_path" : "20200612.Rmd",
+    "properties" : {
+        "cursorPosition" : "63,17",
+        "last_setup_crc32" : "76808330bb338d19",
+        "scrollLine" : "52",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

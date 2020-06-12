@@ -1,0 +1,7 @@
+"0","ggplot(max.temperature, aes(x=date, y = temperature, group = site_name, color = site_name)) + "
+"0","  geom_line() + theme_bw() +"
+"0","  facet_wrap(~site_name) + "
+"0","  theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = ""black"")) +"
+"0","  xlab(""Date"") + theme(axis.text.x=element_text(angle=60, hjust=1)) + # x-axis label and rotating text on x axis"
+"0","  ylab(""Temperature °C"") + # ylim(c(20,32)) + # y-axis label and y axis range"
+"0","  ggtitle(""TIDY TUESDAY YAY"") + theme(plot.title = element_text(hjust = 0.5))  # title label and centering the title"

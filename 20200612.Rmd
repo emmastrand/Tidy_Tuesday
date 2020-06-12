@@ -1,0 +1,70 @@
+---
+title: '20200612'
+author: "EL Strand"
+date: "6/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading required libraries. 
+```{r}
+install.packages("sf")
+library("sf")
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+# install.packages("tidytuesdayR")
+# library("tidytuesdayR")
+```
+
+```{r}
+# Get the Data
+
+rainfall <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/rainfall.csv')
+temperature <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/temperature.csv')
+
+# IF YOU USE THIS DATA PLEASE BE CAUTIOUS WITH INTERPRETATION
+nasa_fire <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-07/MODIS_C6_Australia_and_New_Zealand_7d.csv')
+
+# For JSON File of fires
+url <- "http://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
+
+aus_fires <- sf::st_read(url)
+
+# Or read in with tidytuesdayR package (https://github.com/thebioengineer/tidytuesdayR)
+
+# Either ISO-8601 date or year/week works!
+
+# Install via devtools::install_github("thebioengineer/tidytuesdayR")
+
+# tuesdata <- tidytuesdayR::tt_load('2020-01-07') 
+# tuesdata <- tidytuesdayR::tt_load(2020, week = 2)
+
+
+# rainfall <- tuesdata$rainfall
+```
+
+Calculating range of temperature.  
+```{r}
+temperature <- temperature %>% spread(temperature, temp_type)
+```
+
+Subsetting to maximum temperature. 
+```{r}
+max.temperature <- subset(temperature, temp_type=="max")
+```
+
+Visualize maximum temperature by site. 
+```{r}
+ggplot(max.temperature, aes(x=date, y = temperature, group = site_name, color = site_name)) + 
+  geom_line() + theme_bw() +
+  facet_wrap(~site_name) + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  xlab("Date") + theme(axis.text.x=element_text(angle=60, hjust=1)) + # x-axis label and rotating text on x axis
+  ylab("Temperature °C") + # ylim(c(20,32)) + # y-axis label and y axis range
+  ggtitle("TIDY TUESDAY YAY") + theme(plot.title = element_text(hjust = 0.5))  # title label and centering the title
+
+```

@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591993438272.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2625C146",
+    "lastKnownWriteTime" : 11550773376712710,
+    "last_content_update" : 1591993438272,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "3385E164",
+        "caption" : "max.temperature",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=max.temperature&cache_key=3385E164",
+        "displayedObservations" : 264139,
+        "environment" : "",
+        "object" : "max.temperature",
+        "preview" : 0,
+        "totalObservations" : 264139,
+        "variables" : 5
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
